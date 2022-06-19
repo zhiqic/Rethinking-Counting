@@ -1,4 +1,4 @@
-# GauNet for Object Counting (CVPR 2022)
+# Rethinking Spatial Invariance of Convolutional Networks for Object Counting (CVPR 2022)
 ## Introduction
 This is the implementation of paper: [**Rethinking Spatial Invariance of Convolutional Networks for Object Counting**](https://arxiv.org/pdf/2206.05253.pdf). This repository is a self-contained GauNet implementation in C++ and CUDA, plus a TensorFlow plugin. Use this library to implement DAU layers for any deep learning framework. 
 
