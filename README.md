@@ -6,6 +6,22 @@ Our model was applied to the analysis of Capitol Riot by the Washington Post and
 
 ![framework](./figures/framework.png)
 
+## Video Demo
+Please visit [YouTube](https://www.youtube.com/watch?v=WiZ51V5M0C8&ab_channel=Zhi-QiCheng) to watch the video demonstration and [Washington Post](https://www.washingtonpost.com/investigations/interactive/2021/dc-police-records-capitol-riot/) reports.
+
+## Citation
+Please cite our CVPR 2022 paper when using GauNet code:
+```
+@InProceedings{Cheng_2022_CVPR,
+    author    = {Cheng, Zhi-Qi and Dai, Qi and Li, Hong and Song, Jingkuan and Wu, Xiao and Hauptmann, Alexander G.},
+    title     = {Rethinking Spatial Invariance of Convolutional Networks for Object Counting},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2022},
+    pages     = {19638-19648}
+}
+```
+
 ## Available implementations
 The tensorflow implementation relies on the [DAU-ConvNet](https://https://github.com/skokec/DAU-ConvNet) repositories, and we are actively preparing to add new pytorch implementations.
 - [x] TensorFlow version
@@ -98,22 +114,6 @@ For more details please refer to [C^3 Framework](https://github.com/gjy3035/C-3-
 ## Testing
 For more details please refer to [C^3 Framework](https://github.com/gjy3035/C-3-Framework).
 
-# Video Demo
-Please visit [YouTube](https://www.youtube.com/watch?v=WiZ51V5M0C8&ab_channel=Zhi-QiCheng) to watch the video demonstration and [Washington Post](https://www.washingtonpost.com/investigations/interactive/2021/dc-police-records-capitol-riot/) reports.
-
-## Citation ##
-Please cite our CVPR 2022 paper when using GauNet code:
-```
-@InProceedings{Cheng_2022_CVPR,
-    author    = {Cheng, Zhi-Qi and Dai, Qi and Li, Hong and Song, Jingkuan and Wu, Xiao and Hauptmann, Alexander G.},
-    title     = {Rethinking Spatial Invariance of Convolutional Networks for Object Counting},
-    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-    month     = {June},
-    year      = {2022},
-    pages     = {19638-19648}
-}
-```
-
-## Acknowledgment ##
+## Acknowledgment
 We thank Vitjan Zavrtanik (VitjanZ) for TensorFlow C++/Python wrapper.
 The released training script borrows some codes from the [C^3 Framework](https://github.com/gjy3035/C-3-Framework) and [DAU-ConvNet](https://https://github.com/skokec/DAU-ConvNet) repositories. If you think this repo is helpful for your research, please consider cite them. 
