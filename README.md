@@ -88,8 +88,7 @@ make install # will install whl package (with .so files) into python dist-packag
     conda create -n GauNet python=3.7
     conda activate GauNet
     conda install pytorch==1.7.0 torchvision==0.8.0 cudatoolkit=10.2 -c pytorch
-    cd ${DRNet}
-    pip install -r requirements.txt
+    cd ${GauNet}
     ```
 
 ## Training
