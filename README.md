@@ -1,1 +1,157 @@
-# Rethinking-Counting
+# Rethinking Spatial Invariance of Convolutional Networks for Object Counting (CVPR 2022)
+## Introduction
+This is the implementation of paper: [**Rethinking Spatial Invariance of Convolutional Networks for Object Counting**](https://arxiv.org/pdf/2206.05253.pdf). This repository is a self-contained GauNet implementation in C++ and CUDA, plus a TensorFlow plugin. Use this library to implement DAU layers for any deep learning framework. We try to use locally connected Gaussian kernels to replace the original convolution filter to estimate the spatial position in the density map. The purpose of this is to allow the feature extraction process to potentially stimulate the density map generation process to overcome the annotation noise. Inspired by previous work, we propose a low-rank approximation accompanied with translation invariance to favorably implement the approximation of massive Gaussian convolution. Our work points a new direction for follow-up research, which should investigate how to properly relax the overly strict pixel-level spatial invariance for object counting.
+
+![framework](./figures/framework.pdf)
+
+# Available implementations:
+- [x] TensorFlow version
+- [X] PyTorch vsrsion 
+
+See below for more details on each implementation.
+
+
+# TensorFlow #
+
+We provide TensorFlow plugin and appropriate Python wrappers that can be used to directly replace the `tf.contrib.layers.conv2d` function. Note, our C++/CUDA code natively supports only NCHW format for input, please update your TensorFlow models to use this format. 
+
+Requirements and dependency libraries for TensorFlow plugin:
+ * Python (tested on Python2.7 and Python3.5)
+ * TensorFlow 1.6 or newer 
+ * Numpy
+ * OpenBlas
+ * (optional) Scipy, matplotlib and python-tk  for running unit test in `dau_conv_test.py`
+ 
+## Instalation from pre-compiled binaries (pip)
+
+If you are using `TensorFlow` from pip, then install a pre-compiled binaries (.whl) from the [RELEASE](https://github.com/skokec/DAU-ConvNet/releases) page (mirror server also available http://box.vicos.si/skokec/dau-convnet):
+
+```bash
+# install dependency library (OpenBLAS)
+sudo apt-get install libopenblas-dev  wget
+
+# install dau-conv package
+export TF_VERSION=1.13.1
+sudo pip install https://github.com/skokec/DAU-ConvNet/releases/download/v1.0/dau_conv-1.0_TF[TF_VERSION]-cp35-cp35m-manylinux1_x86_64.whl
+```
+
+Note that pip packages were compiled against the specific version of TensorFlow from pip, which must be installed beforhand.
+
+## Docker 
+
+Pre-compiled docker images for TensorFlow are also available on [Docker Hub](https://hub.docker.com/r/skokec/dau-convnet) that are build using the [`plugins/tensorflow/docker/Dockerfile`](https://github.com/skokec/DAU-ConvNet/blob/master/plugins/tensorflow/docker/Dockerfile). 
+
+Dockers are build for specific python and TensorFlow version. Start docker, for instance, for Python3.5 and TensorFlow r1.13.1, using:
+
+```bash
+sudo nvidia-docker run -i -d -t skokec/tf-dau-convnet:1.0-py3.5-tf1.13.1 /bin/bash
+```
+
+## Build and installation ##
+
+Requirements and dependency libraries to compile DAU-ConvNet:
+ * Ubuntu 16.04 (not tested on other OS and other versions)
+ * C++11
+ * CMake 2.8 or newer (tested on version 3.5)
+ * CUDA SDK Toolkit (tested on version 8.0 and 9.0)
+ * BLAS (ATLAS or OpenBLAS)
+ * cuBlas
+
+On Ubuntu 16.04 with pre-installed CUDA and cuBLAS (e.g. using nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04 or nvidia/cuda:8.0-cudnn5-devel-ubuntu16.04 docker) install dependencies first:
+
+```bash
+apt-get update
+apt-get install cmake python python-pip libopenblas-dev
+ 
+pip install tensorflow-gpu>=1.6
+# Note: during instalation tensorflow package is sufficent, but during running the tensorflow-gpu is required.
+```
+
+Then clone the repository and build from source:
+```bash
+git clone https://github.com/skokec/DAU-ConvNet
+git submodule update --init --recursive
+
+mkdir DAU-ConvNet/build
+cd DAU-ConvNet/build
+
+cmake -DBLAS=Open -DBUILD_TENSORFLOW_PLUGIN=on ..
+
+make -j # creates whl file in build/plugin/tensorflow/wheelhouse
+make install # will install whl package (with .so files) into python dist-packages folder 
+
+```
+
+
+
+
+# Getting started 
+
+## preparatoin 
+
+- Clone this repo in the directory (```Root/GauNet```):
+- Install dependencies. We use python 3.7 and pytorch >= 1.6.0 : http://pytorch.org.
+
+    ```bash
+    conda create -n DRNet python=3.7
+    conda activate DRNet
+    conda install pytorch==1.7.0 torchvision==0.8.0 cudatoolkit=10.2 -c pytorch
+    cd ${DRNet}
+    pip install -r requirements.txt
+    ```
+
+-  [PreciseRoIPooling](https://github.com/vacancy/PreciseRoIPooling) for extracting the feature descriptors
+
+      Note: the PreciseRoIPooling [1] module is included in the repo, but it's likely to have some problems when running the code: 
+
+      1. If you are prompted to install ninja, the following commands will help you.  
+            ```bash
+            wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip
+            sudo unzip ninja-linux.zip -d /usr/local/bin/
+            sudo update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force 
+            ```
+      2. If you encounter errors when compiling the PreciseRoIPooling, you can look up the original repo's [issues](https://github.com/vacancy/PreciseRoIPooling/issues) for help. One solution to the most common errors can be found in this [blog](https://blog.csdn.net/weixin_42098198/article/details/124756432?spm=1001.2014.3001.5502).
+- Datasets 
+   - **HT21** dataset: Download CroHD dataset from this [link](https://motchallenge.net/data/Head_Tracking_21/). Unzip ```HT21.zip``` and place ``` HT21``` into the folder (```Root/dataset/```). 
+   - **SenseCrowd** dataset: To be updated when it is released.
+   - Download the lists of `train/val/test` sets at [link1](https://1drv.ms/u/s!AgKz_E1uf260nWeqa86-o9FMIqMt?e=0scDuw) or [link2](https://pan.baidu.com/s/1cMB4p-Z-55t4DEdjfz18zg?pwd=aacv), and place them to each dataset folder, respectively.   
+## Training
+Check some parameters in ```config.py``` before training,
+* Use `__C.DATASET = 'HT21'` to set the dataset (default: `HT21`).
+* Use `__C.GPU_ID = '0'` to set the GPU.
+* Use `__C.MAX_EPOCH = 20` to set the number of the training epochs (default:20).
+* Use `__C.EXP_PATH = os.path.join('./exp', __C.DATASET)` to set the dictionary for saving the code, weights, and resume point.
+
+Check other parameters (`TRAIN_BATCH_SIZE`, `TRAIN_SIZE` etc.) in the ```Root/DRNet/datasets/setting``` in case your GPU's memory is not support for the default setting.
+- run ```python train.py```.
+
+ 
+Tips: The training process takes **~10 hours** on HT21 dataset with **one TITAN RTX (24GB Memory)**. 
+
+## Testing
+To reproduce the performance, download the pre-trained models from [onedrive](https://1drv.ms/u/s!AgKz_E1uf260nWeqa86-o9FMIqMt?e=0scDuw) or [badu disk](https://pan.baidu.com/s/1cMB4p-Z-55t4DEdjfz18zg?pwd=aacv) and then place  ```pretrained_models``` folder to ```Root/DRNet/model/``` 
+- for HT21:                                                    
+  - Run ```python test_HT21.py```.
+- for SenseCrowd:  
+  - Run ```python test_SENSE.py```.
+Then the output file (```*_SENSE_cnt.py```) will be generated.
+
+# Video Demo
+Please visit [YouTube](https://www.youtube.com/watch?v=WiZ51V5M0C8&ab_channel=Zhi-QiCheng) to watch the video demonstration. 
+
+## Citation ##
+Please cite our CVPR 2022 paper when using GauNet code:
+```
+@InProceedings{Cheng_2022_CVPR,
+    author    = {Cheng, Zhi-Qi and Dai, Qi and Li, Hong and Song, Jingkuan and Wu, Xiao and Hauptmann, Alexander G.},
+    title     = {Rethinking Spatial Invariance of Convolutional Networks for Object Counting},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2022},
+    pages     = {19638-19648}
+}
+```
+
+## Acknowledgment ##
+We thank Vitjan Zavrtanik (VitjanZ) for TensorFlow C++/Python wrapper.
+The released training script borrows some codes from the [C^3 Framework](https://github.com/gjy3035/C-3-Framework) and [DAU-ConvNet](https://https://github.com/skokec/DAU-ConvNet) repositories. If you think this repo is helpful for your research, please consider cite them. 
