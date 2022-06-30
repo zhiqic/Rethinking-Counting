@@ -12,7 +12,7 @@ Inspired by previous work, we propose a low-rank approximation accompanied with 
 ![framework](./figures/framework.png)
 
 ## Available implementations
-The TensorFlow implementation relies on the [DAU-ConvNet](https://https://github.com/skokec/DAU-ConvNet) repositories, and we are actively preparing to add new PyTorch implementations. There are some inconsistencies in the function versions of the current TensorFlow version. Suggest waiting for our PyTorch implementation.
+The TensorFlow implementation relies on the [DAU-ConvNet](https://https://github.com/skokec/DAU-ConvNet) repositories, and we are actively preparing to add new PyTorch implementations. There are some inconsistencies in the function of the current TensorFlow version. Suggest waiting for our PyTorch implementation.
 - [x] TensorFlow version
 - [-] PyTorch vsrsion 
 
