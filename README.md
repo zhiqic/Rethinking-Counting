@@ -5,14 +5,14 @@ Our method was applied to the analysis of Capitol Riot by the Washington Post an
 [Washington Post](https://www.washingtonpost.com/investigations/interactive/2021/dc-police-records-capitol-riot/) for original news reports.
 
 ## Introduction
-This is the implementation of paper: [**Rethinking Spatial Invariance of Convolutional Networks for Object Counting**](https://arxiv.org/pdf/2206.05253.pdf). This repository is a self-contained GauNet implementation in C++ and CUDA, plus a TensorFlow plugin. Use this library to implement DAU layers for any deep learning framework.
+This is the implementation of the paper: [**Rethinking Spatial Invariance of Convolutional Networks for Object Counting**](https://arxiv.org/pdf/2206.05253.pdf). This repository is a self-contained GauNet implementation in C++ and CUDA, plus a TensorFlow plugin. Use this library to implement DAU layers for any deep learning framework.
 
-We try to use locally connected Gaussian kernels to replace the original convolution filter to estimate the spatial position in the density map. The purpose of this is to allow the feature extraction process to potentially stimulate the density map generation process to overcome the annotation noise. Inspired by previous work, we propose a low-rank approximation accompanied with translation invariance to favorably implement the approximation of massive Gaussian convolution. Our work points a new direction for follow-up research, which should investigate how to properly relax the overly strict pixel-level spatial invariance for object counting.
+Inspired by previous work, we propose a low-rank approximation accompanied with translation invariance to favorably implement the approximation of massive Gaussian convolution. We try to use locally connected Gaussian kernels to replace the original convolution filter to estimate the spatial position in the density map. The purpose of this is to allow the feature extraction process to potentially stimulate the density map generation process to overcome the annotation noise. Our work points a new direction for follow-up research, which should investigate how to properly relax the overly strict pixel-level spatial invariance for object counting.
 
 ![framework](./figures/framework.png)
 
 ## Available implementations
-The tensorflow implementation relies on the [DAU-ConvNet](https://https://github.com/skokec/DAU-ConvNet) repositories, and we are actively preparing to add new pytorch implementations. There are some inconsistencies in the function versions of the current TensorFlow version. Suggest to wait for our pytorch implementation.
+The TensorFlow implementation relies on the [DAU-ConvNet](https://https://github.com/skokec/DAU-ConvNet) repositories, and we are actively preparing to add new PyTorch implementations. There are some inconsistencies in the function versions of the current TensorFlow version. Suggest waiting for our PyTorch implementation.
 - [x] TensorFlow version
 - [-] PyTorch vsrsion 
 
@@ -20,7 +20,7 @@ See below for more details on each implementation.
 
 
 ## TensorFlow
-We provide TensorFlow plugin and appropriate Python wrappers that can be used to directly replace the `tf.contrib.layers.conv2d` function. Note our C++/CUDA code natively supports only NCHW format for input, please update your TensorFlow models to use this format. 
+We provide TensorFlow plugin and appropriate Python wrappers that can be used to directly replace the `tf.contrib.layers.conv2d` function. Note our C++/CUDA code natively supports only NCHW format for input. Please update your TensorFlow models to use this format. 
 
 Requirements and dependency libraries for TensorFlow plugin:
  * Python (tested on Python2.7 and Python3.5)
@@ -29,8 +29,8 @@ Requirements and dependency libraries for TensorFlow plugin:
  * OpenBlas
  * (optional) Scipy, matplotlib and python-tk  for running unit test in `dau_conv_test.py`
  
-## Instalation from pre-compiled binaries (pip)
-If you are using `TensorFlow` from pip, then install a pre-compiled binaries (.whl) from the [RELEASE](https://github.com/skokec/DAU-ConvNet/releases) page (mirror server also available http://box.vicos.si/skokec/dau-convnet):
+## Installation from pre-compiled binaries (pip)
+If you are using `TensorFlow` from pip, then install pre-compiled binaries (.whl) from the [RELEASE](https://github.com/skokec/DAU-ConvNet/releases) page (mirror server also available http://box.vicos.si/skokec/dau-convnet):
 
 ```bash
 # install dependency library (OpenBLAS)
@@ -41,7 +41,7 @@ export TF_VERSION=1.13.1
 sudo pip install https://github.com/skokec/DAU-ConvNet/releases/download/v1.0/dau_conv-1.0_TF[TF_VERSION]-cp35-cp35m-manylinux1_x86_64.whl
 ```
 
-Note that pip packages were compiled against the specific version of TensorFlow from pip, which must be installed beforhand.
+Note that pip packages were compiled against the specific version of TensorFlow from pip, which must be installed beforehand.
 
 ## Docker 
 Pre-compiled docker images for TensorFlow are also available on [Docker Hub](https://hub.docker.com/r/skokec/dau-convnet) that are build using the [`plugins/tensorflow/docker/Dockerfile`](https://github.com/skokec/DAU-ConvNet/blob/master/plugins/tensorflow/docker/Dockerfile). 
@@ -68,10 +68,10 @@ apt-get update
 apt-get install cmake python python-pip libopenblas-dev
  
 pip install tensorflow-gpu>=1.6
-# Note: during instalation tensorflow package is sufficent, but during running the tensorflow-gpu is required.
+# Note: during installation TensorFlow package is sufficient, but during running, the TensorFlow-GPU is required.
 ```
 
-Then clone the repository and build from source:
+Then clone the repository and build from the source:
 ```bash
 git clone https://github.com/skokec/DAU-ConvNet
 git submodule update --init --recursive
@@ -81,14 +81,14 @@ cd DAU-ConvNet/build
 
 cmake -DBLAS=Open -DBUILD_TENSORFLOW_PLUGIN=on ..
 
-make -j # creates whl file in build/plugin/tensorflow/wheelhouse
+make -j # creates whl file in build/plugin/TensorFlow/wheelhouse
 make install # will install whl package (with .so files) into python dist-packages folder 
 
 ```
 
-## Preparatoin 
+## Preparation 
 - Clone this repo in the directory (```Root/GauNet```):
-- Install dependencies. We use python 3.7 and pytorch >= 1.6.0 : http://pytorch.org.
+- Install dependencies. We use python 3.7 and PyTorch >= 1.6.0 : http://pytorch.org.
 
     ```bash
     conda create -n GauNet python=3.7
@@ -99,14 +99,14 @@ make install # will install whl package (with .so files) into python dist-packag
 
 ## Training
 Check some parameters in ```config.py``` before training,
-For more details please refer to [C^3 Framework](https://github.com/gjy3035/C-3-Framework).
+Please refer to [C^3 Framework](https://github.com/gjy3035/C-3-Framework).
 
 ## Testing
-For more details please refer to [C^3 Framework](https://github.com/gjy3035/C-3-Framework).
+Please refer to [C^3 Framework](https://github.com/gjy3035/C-3-Framework).
 
 ## Acknowledgment
 We thank Vitjan Zavrtanik (VitjanZ) for TensorFlow C++/Python wrapper.
-The released training script borrows some codes from the [C^3 Framework](https://github.com/gjy3035/C-3-Framework) and [DAU-ConvNet](https://https://github.com/skokec/DAU-ConvNet) repositories. If you think this repo is helpful for your research, please consider cite them. 
+The released training script borrows some codes from the [C^3 Framework](https://github.com/gjy3035/C-3-Framework) and [DAU-ConvNet](https://https://github.com/skokec/DAU-ConvNet) repositories. If you think this repo is helpful for your research, please consider citing them. 
 
 ## Citation
 Please cite our CVPR 2022 paper when using GauNet code:
