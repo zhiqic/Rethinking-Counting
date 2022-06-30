@@ -1,15 +1,15 @@
 # Rethinking Spatial Invariance of Convolutional Networks for Object Counting (CVPR 2022)
 ## Introduction
-This is the implementation of paper: [**Rethinking Spatial Invariance of Convolutional Networks for Object Counting**](https://arxiv.org/pdf/2206.05253.pdf). This repository is a self-contained GauNet implementation in C++ and CUDA, plus a TensorFlow plugin. Use this library to implement DAU layers for any deep learning framework. 
+This is the implementation of paper: [**Rethinking Spatial Invariance of Convolutional Networks for Object Counting**](https://arxiv.org/pdf/2206.05253.pdf). This repository is a self-contained GauNet implementation in C++ and CUDA, plus a TensorFlow plugin. Use this library to implement DAU layers for any deep learning framework.
 
-Our model was applied to the analysis of Capitol Riot by the Washington Post and won the 2022 Pulitzer Prize for public service. 
+Our method was applied to the analysis of Capitol Riot by the Washington Post and won the 2022 Pulitzer Prize for public service.
 
 We try to use locally connected Gaussian kernels to replace the original convolution filter to estimate the spatial position in the density map. The purpose of this is to allow the feature extraction process to potentially stimulate the density map generation process to overcome the annotation noise. Inspired by previous work, we propose a low-rank approximation accompanied with translation invariance to favorably implement the approximation of massive Gaussian convolution. Our work points a new direction for follow-up research, which should investigate how to properly relax the overly strict pixel-level spatial invariance for object counting.
 
 ![framework](./figures/framework.png)
 
 ## Video Demo
-Please visit [YouTube](https://www.youtube.com/watch?v=WiZ51V5M0C8&ab_channel=Zhi-QiCheng) to watch the video demonstration and [Washington Post](https://www.washingtonpost.com/investigations/interactive/2021/dc-police-records-capitol-riot/) reports.
+Please visit [YouTube](https://www.youtube.com/watch?v=WiZ51V5M0C8&ab_channel=Zhi-QiCheng) to watch the video demonstration and [Washington Post (https://www.washingtonpost.com/investigations/interactive/2021/dc-police-records-capitol-riot/) reports.
 
 ## Citation
 Please cite our CVPR 2022 paper when using GauNet code:
@@ -25,9 +25,9 @@ Please cite our CVPR 2022 paper when using GauNet code:
 ```
 
 ## Available implementations
-The tensorflow implementation relies on the [DAU-ConvNet](https://https://github.com/skokec/DAU-ConvNet) repositories, and we are actively preparing to add new pytorch implementations.
+The tensorflow implementation relies on the [DAU-ConvNet](https://https://github.com/skokec/DAU-ConvNet) repositories, and we are actively preparing to add new pytorch implementations. There are some inconsistencies in the function versions of the current TensorFlow version. Suggest to wait for our pytorch implementation.
 - [x] TensorFlow version
-- [] PyTorch vsrsion 
+- [-] PyTorch vsrsion 
 
 See below for more details on each implementation.
 
