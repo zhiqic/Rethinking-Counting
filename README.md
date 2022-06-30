@@ -1,28 +1,15 @@
 # Rethinking Spatial Invariance of Convolutional Networks for Object Counting (CVPR 2022)
+
+## 2022 Pulitzer Prize for public service
+Our method was applied to the analysis of Capitol Riot by the Washington Post and won the [2022 Pulitzer Prize for public service](https://www.pulitzer.org/prize-winners-by-year). Please visit [YouTube](https://www.youtube.com/watch?v=WiZ51V5M0C8&ab_channel=Zhi-QiCheng) to watch the video demonstration and 
+[Washington Post](https://www.washingtonpost.com/investigations/interactive/2021/dc-police-records-capitol-riot/) for original news reports.
+
 ## Introduction
 This is the implementation of paper: [**Rethinking Spatial Invariance of Convolutional Networks for Object Counting**](https://arxiv.org/pdf/2206.05253.pdf). This repository is a self-contained GauNet implementation in C++ and CUDA, plus a TensorFlow plugin. Use this library to implement DAU layers for any deep learning framework.
-
-Our method was applied to the analysis of Capitol Riot by the Washington Post and won the 2022 Pulitzer Prize for public service.
 
 We try to use locally connected Gaussian kernels to replace the original convolution filter to estimate the spatial position in the density map. The purpose of this is to allow the feature extraction process to potentially stimulate the density map generation process to overcome the annotation noise. Inspired by previous work, we propose a low-rank approximation accompanied with translation invariance to favorably implement the approximation of massive Gaussian convolution. Our work points a new direction for follow-up research, which should investigate how to properly relax the overly strict pixel-level spatial invariance for object counting.
 
 ![framework](./figures/framework.png)
-
-## Video Demo
-Please visit [YouTube](https://www.youtube.com/watch?v=WiZ51V5M0C8&ab_channel=Zhi-QiCheng) to watch the video demonstration and [Washington Post (https://www.washingtonpost.com/investigations/interactive/2021/dc-police-records-capitol-riot/) reports.
-
-## Citation
-Please cite our CVPR 2022 paper when using GauNet code:
-```
-@InProceedings{Cheng_2022_CVPR,
-    author    = {Cheng, Zhi-Qi and Dai, Qi and Li, Hong and Song, Jingkuan and Wu, Xiao and Hauptmann, Alexander G.},
-    title     = {Rethinking Spatial Invariance of Convolutional Networks for Object Counting},
-    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-    month     = {June},
-    year      = {2022},
-    pages     = {19638-19648}
-}
-```
 
 ## Available implementations
 The tensorflow implementation relies on the [DAU-ConvNet](https://https://github.com/skokec/DAU-ConvNet) repositories, and we are actively preparing to add new pytorch implementations. There are some inconsistencies in the function versions of the current TensorFlow version. Suggest to wait for our pytorch implementation.
@@ -31,7 +18,8 @@ The tensorflow implementation relies on the [DAU-ConvNet](https://https://github
 
 See below for more details on each implementation.
 
-# TensorFlow #
+
+## TensorFlow
 We provide TensorFlow plugin and appropriate Python wrappers that can be used to directly replace the `tf.contrib.layers.conv2d` function. Note our C++/CUDA code natively supports only NCHW format for input, please update your TensorFlow models to use this format. 
 
 Requirements and dependency libraries for TensorFlow plugin:
@@ -119,3 +107,16 @@ For more details please refer to [C^3 Framework](https://github.com/gjy3035/C-3-
 ## Acknowledgment
 We thank Vitjan Zavrtanik (VitjanZ) for TensorFlow C++/Python wrapper.
 The released training script borrows some codes from the [C^3 Framework](https://github.com/gjy3035/C-3-Framework) and [DAU-ConvNet](https://https://github.com/skokec/DAU-ConvNet) repositories. If you think this repo is helpful for your research, please consider cite them. 
+
+## Citation
+Please cite our CVPR 2022 paper when using GauNet code:
+```
+@InProceedings{Cheng_2022_CVPR,
+    author    = {Cheng, Zhi-Qi and Dai, Qi and Li, Hong and Song, Jingkuan and Wu, Xiao and Hauptmann, Alexander G.},
+    title     = {Rethinking Spatial Invariance of Convolutional Networks for Object Counting},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2022},
+    pages     = {19638-19648}
+}
+```
