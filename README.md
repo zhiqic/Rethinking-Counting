@@ -12,7 +12,7 @@ Inspired by previous work, we propose a low-rank approximation accompanied with 
 ![framework](./figures/framework.png)
 
 ## Available implementations
-The TensorFlow implementation relies on the [DAU-ConvNet](https://https://github.com/skokec/DAU-ConvNet) repositories, and we are actively preparing to add new PyTorch implementations. There are some inconsistencies in the function of the current TensorFlow version. Suggest waiting for our PyTorch implementation.
+The TensorFlow implementation relies on the [DAU-ConvNet](https://github.com/skokec/DAU-ConvNet) repositories, and we are actively preparing to add new PyTorch implementations. There are some inconsistencies in the function of the current TensorFlow version. Suggest waiting for our PyTorch implementation.
 - [x] TensorFlow version
 - [-] PyTorch vsrsion 
 
@@ -106,7 +106,7 @@ Please refer to [C^3 Framework](https://github.com/gjy3035/C-3-Framework).
 
 ## Acknowledgment
 We thank Vitjan Zavrtanik (VitjanZ) for TensorFlow C++/Python wrapper.
-The released training script borrows some codes from the [C^3 Framework](https://github.com/gjy3035/C-3-Framework) and [DAU-ConvNet](https://https://github.com/skokec/DAU-ConvNet) repositories. If you think this repo is helpful for your research, please consider citing them. 
+The released training script borrows some codes from the [C^3 Framework](https://github.com/gjy3035/C-3-Framework) and [DAU-ConvNet](https://github.com/skokec/DAU-ConvNet) repositories. If you think this repo is helpful for your research, please consider citing them. 
 
 ## Citation
 Please cite our CVPR 2022 paper when using GauNet code:
