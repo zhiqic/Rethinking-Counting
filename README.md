@@ -1,7 +1,7 @@
 # Rethinking Spatial Invariance of Convolutional Networks for Object Counting (CVPR 2022)
 
 ## 2022 Pulitzer Prize for public service
-Our method was applied to the analysis of Capitol Riot by the Washington Post and won the [2022 Pulitzer Prize for public service](https://www.pulitzer.org/prize-winners-by-year). Please visit [YouTube](https://www.youtube.com/watch?v=WiZ51V5M0C8&ab_channel=Zhi-QiCheng) to watch the video demonstration and 
+Our method was applied to the analysis of Capitol Riot by the Washington Post and won the [**2022 Pulitzer Prize for public service**](https://www.pulitzer.org/prize-winners-by-year). Please visit [YouTube](https://www.youtube.com/watch?v=WiZ51V5M0C8&ab_channel=Zhi-QiCheng) to watch the video demonstration and 
 [Washington Post](https://www.washingtonpost.com/investigations/interactive/2021/dc-police-records-capitol-riot/) for original news reports.
 
 ## Introduction
