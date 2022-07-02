@@ -1,5 +1,6 @@
 # Rethinking Spatial Invariance of Convolutional Networks for Object Counting (CVPR 2022)
 
+
 ## 2022 Pulitzer Prize for public service
 Our method was applied to the analysis of Capitol Riot by the Washington Post and won the [**2022 Pulitzer Prize for public service**](https://www.pulitzer.org/prize-winners-by-year). Please visit [YouTube](https://www.youtube.com/watch?v=WiZ51V5M0C8&ab_channel=Zhi-QiCheng) to watch the video demonstration and 
 [Washington Post](https://www.washingtonpost.com/investigations/interactive/2021/dc-police-records-capitol-riot/) for original news reports.
@@ -8,12 +9,14 @@ Our method was applied to the analysis of Capitol Riot by the Washington Post an
   <img src="./figures/demo.gif" alt="animated" />
 </p>
 
+
 ## Introduction
 This is the implementation of the paper: [**Rethinking Spatial Invariance of Convolutional Networks for Object Counting**](https://arxiv.org/pdf/2206.05253.pdf). This repository is a self-contained GauNet implementation in C++ and CUDA, plus a TensorFlow plugin. Use this library to implement DAU layers for any deep learning framework.
 
 Inspired by previous work, we propose a low-rank approximation accompanied with translation invariance to favorably implement the approximation of massive Gaussian convolution. We try to use locally connected Gaussian kernels to replace the original convolution filter to estimate the spatial position in the density map. The purpose of this is to allow the feature extraction process to potentially stimulate the density map generation process to overcome the annotation noise. Our work points a new direction for follow-up research, which should investigate how to properly relax the overly strict pixel-level spatial invariance for object counting.
 
 ![framework](./figures/framework.png)
+
 
 ## Available implementations
 The TensorFlow implementation relies on the [DAU-ConvNet](https://github.com/skokec/DAU-ConvNet) repositories, and we are actively preparing to add new PyTorch implementations. There are some inconsistencies in the function of the current TensorFlow version. Suggest waiting for our PyTorch implementation.
