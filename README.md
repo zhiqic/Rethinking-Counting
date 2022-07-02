@@ -4,10 +4,7 @@
 Our method was applied to the analysis of Capitol Riot by the Washington Post and won the [**2022 Pulitzer Prize for public service**](https://www.pulitzer.org/prize-winners-by-year). Please visit [YouTube](https://www.youtube.com/watch?v=WiZ51V5M0C8&ab_channel=Zhi-QiCheng) to watch the video demonstration and 
 [Washington Post](https://www.washingtonpost.com/investigations/interactive/2021/dc-police-records-capitol-riot/) for original news reports.
 
-![newsreport](./figures/newsreport.png)
-![certificate](./figures/certificate.png)
-
-[![Watch the video](./figures/newsreport.png)](https://www.youtube.com/watch?v=rsQTY9083r8&ab_channel=WashingtonPost)
+[![Watch the video](./figures/certificate.png)](https://www.youtube.com/watch?v=rsQTY9083r8&ab_channel=WashingtonPost)
 
 
 ## Introduction
