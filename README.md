@@ -121,7 +121,7 @@ Please cite our CVPR 2022 paper when using GauNet code:
 @InProceedings{Cheng_2022_CVPR,
     author    = {Cheng, Zhi-Qi and Dai, Qi and Li, Hong and Song, Jingkuan and Wu, Xiao and Hauptmann, Alexander G.},
     title     = {Rethinking Spatial Invariance of Convolutional Networks for Object Counting},
-    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
     month     = {June},
     year      = {2022},
     pages     = {19638-19648}
