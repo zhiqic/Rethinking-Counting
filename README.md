@@ -130,3 +130,6 @@ Please cite our CVPR 2022 paper:
     pages     = {19638-19648}
 }
 ```
+
+## License
+GSRFormer is released under the Apache 2.0 license. Please see the [LICENSE](LICENSE) file for more information.
