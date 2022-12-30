@@ -116,7 +116,7 @@ We thank Vitjan Zavrtanik (VitjanZ) for TensorFlow C++/Python wrapper.
 The released training script borrows some codes from the [C^3 Framework](https://github.com/gjy3035/C-3-Framework) and [DAU-ConvNet](https://github.com/skokec/DAU-ConvNet) repositories. If you think this repo is helpful for your research, please consider citing them. 
 
 ## Citation
-Please cite our CVPR 2022 paper when using GauNet code:
+Please cite our CVPR 2022 paper:
 ```
 @InProceedings{Cheng_2022_CVPR,
     author    = {Cheng, Zhi-Qi and Dai, Qi and Li, Hong and Song, Jingkuan and Wu, Xiao and Hauptmann, Alexander G.},
