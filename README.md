@@ -1,16 +1,16 @@
-# Rethinking Spatial Invariance of Convolutional Networks for Object Counting (CVPR 2022)
+# [CVPR 2022] Rethinking Spatial Invariance of Convolutional Networks for Object Counting
 
 
 ## 2022 Pulitzer Prize for public service
 Our method was applied to the analysis of Capitol Riot by the Washington Post and won the [**2022 Pulitzer Prize for public service**](https://www.pulitzer.org/prize-winners-by-year). Please visit [YouTube](https://www.youtube.com/watch?v=WiZ51V5M0C8&ab_channel=Zhi-QiCheng) to watch the video demonstration and 
-[Washington Post](https://www.washingtonpost.com/investigations/interactive/2021/dc-police-records-capitol-riot/) for original news reports.
+[Washington Post](https://www.washingtonpost.com/investigations/interactive/2021/dc-police-records-capitol-riot/) for news reports.
 
 <p align="center">
   <img src="./figures/demo.gif" alt="animated" />
 </p>
 
 
-## Introduction
+## Overview
 This is the implementation of the paper: [**Rethinking Spatial Invariance of Convolutional Networks for Object Counting**](https://arxiv.org/pdf/2206.05253.pdf). This repository is a self-contained GauNet implementation in C++ and CUDA, plus a TensorFlow plugin. Use this library to implement DAU layers for any deep learning framework.
 
 We propose a low-rank approximation accompanied with translation invariance to favorably implement the approximation of massive Gaussian convolution. We try to use locally connected Gaussian kernels to replace the original convolution filter to estimate the spatial position in the density map. The purpose of this is to allow the feature extraction process to potentially stimulate the density map generation process to overcome the annotation noise. Our work points a new direction for follow-up research, which should investigate how to properly relax the overly strict pixel-level spatial invariance for object counting.
@@ -19,7 +19,8 @@ We propose a low-rank approximation accompanied with translation invariance to f
 
 
 ## Available implementations
-The TensorFlow implementation relies on the [DAU-ConvNet](https://github.com/skokec/DAU-ConvNet) repositories. There are some inconsistencies in the function of the current TensorFlow version. Suggest waiting for our PyTorch implementation.
+We thank Vitjan Zavrtanik (VitjanZ) for TensorFlow C++/Python wrapper.
+The released training script borrows some codes from the [C^3 Framework](https://github.com/gjy3035/C-3-Framework) and [DAU-ConvNet](https://github.com/skokec/DAU-ConvNet) repositories. There are some inconsistencies in the function of the current TensorFlow version. Suggest waiting for our PyTorch implementation.
 - [x] TensorFlow version
 - [-] PyTorch vsrsion 
 
@@ -105,15 +106,17 @@ make install # will install whl package (with .so files) into python dist-packag
     ```
 
 ## Training
-Check some parameters in ```config.py``` before training,
-Please refer to [C^3 Framework](https://github.com/gjy3035/C-3-Framework).
+Check the parameters in ```config.py``` before training.
+Please refer to [C^3 Framework](https://github.com/gjy3035/C-3-Framework) for more details.
 
 ## Testing
-Please refer to [C^3 Framework](https://github.com/gjy3035/C-3-Framework).
+Please refer to [C^3 Framework](https://github.com/gjy3035/C-3-Framework) for more details.
 
 ## Acknowledgment
-We thank Vitjan Zavrtanik (VitjanZ) for TensorFlow C++/Python wrapper.
-The released training script borrows some codes from the [C^3 Framework](https://github.com/gjy3035/C-3-Framework) and [DAU-ConvNet](https://github.com/skokec/DAU-ConvNet) repositories. If you think this repo is helpful for your research, please consider citing them. 
+This work was partially supported by the Air Force Research Laboratory under agreement number FA8750-19-2-0200; the financial assistance award 60NANB17D156 from U.S. Department of Commerce, National Institute of Standards and Technology (NIST); the Intelligence Advanced Research Projects Activity (IARPA) via Department of Interior/Interior Business Center~(DOI/IBC) contract number D17PC00340; the Defense Advanced Research Projects Agency~(DARPA) grant funded under the GAILA program~(award HR00111990063).
+
+The U.S. Government is authorized to reproduce and distribute reprints for Governmental purposes notwithstanding any copyright notation thereon. The views and conclusions contained herein are those of the authors and should not be interpreted as necessarily representing the official policies or endorsements, either expressed or implied, of the Air Force Research Laboratory or the U.S. Government.
+
 
 ## Citation
 Please cite our CVPR 2022 paper:
