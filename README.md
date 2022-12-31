@@ -126,10 +126,10 @@ Please cite our CVPR 2022 paper:
 }
 ```
 
-## License
-GSRFormer is released under the Apache 2.0 license. Please see the [LICENSE](LICENSE) file for more information.
-
 ## Acknowledgment
 This work was partially supported by the Air Force Research Laboratory under agreement number FA8750-19-2-0200; the financial assistance award 60NANB17D156 from U.S. Department of Commerce, National Institute of Standards and Technology (NIST); the Intelligence Advanced Research Projects Activity (IARPA) via Department of Interior/Interior Business Center~(DOI/IBC) contract number D17PC00340; the Defense Advanced Research Projects Agency~(DARPA) grant funded under the GAILA program~(award HR00111990063).
 
 The U.S. Government is authorized to reproduce and distribute reprints for Governmental purposes notwithstanding any copyright notation thereon. The views and conclusions contained herein are those of the authors and should not be interpreted as necessarily representing the official policies or endorsements, either expressed or implied, of the Air Force Research Laboratory or the U.S. Government.
+
+## License
+GSRFormer is released under the Apache 2.0 license. Please see the [LICENSE](LICENSE) file for more information.
