@@ -132,4 +132,4 @@ This work was partially supported by the Air Force Research Laboratory under agr
 The U.S. Government is authorized to reproduce and distribute reprints for Governmental purposes notwithstanding any copyright notation thereon. The views and conclusions contained herein are those of the authors and should not be interpreted as necessarily representing the official policies or endorsements, either expressed or implied, of the Air Force Research Laboratory or the U.S. Government.
 
 ## License
-GSRFormer is released under the Apache 2.0 license. Please see the [LICENSE](LICENSE) file for more information.
+GauNet is released under the Apache 2.0 license. Please see the [LICENSE](LICENSE) file for more information.
