@@ -2,8 +2,7 @@
 
 
 ## 2022 Pulitzer Prize for public service
-Our method was applied to the analysis of Capitol Riot by the Washington Post and won the [**2022 Pulitzer Prize for public service**](https://www.pulitzer.org/prize-winners-by-year). Please visit [YouTube](https://www.youtube.com/watch?v=WiZ51V5M0C8&ab_channel=Zhi-QiCheng) to watch the video demonstration and 
-[Washington Post](https://www.washingtonpost.com/investigations/interactive/2021/dc-police-records-capitol-riot/) for news reports.
+Our method was applied to the analysis of the Capitol Riot by the Washington Post and won the [**2022 Pulitzer Prize for public service**](https://www.pulitzer.org/prize-winners-by-year). You can watch the video demonstration on [YouTube](https://www.youtube.com/watch?v=WiZ51V5M0C8&ab_channel=Zhi-QiCheng) and read the news reports on the [Washington Post](https://www.washingtonpost.com/investigations/interactive/2021/dc-police-records-capitol-riot/).
 
 <p align="center">
   <img src="./figures/demo.gif" alt="animated" />
@@ -11,16 +10,16 @@ Our method was applied to the analysis of Capitol Riot by the Washington Post an
 
 
 ## Overview
-This is the implementation of the paper: [**Rethinking Spatial Invariance of Convolutional Networks for Object Counting**](https://arxiv.org/pdf/2206.05253.pdf). This repository is a self-contained GauNet implementation in C++ and CUDA, plus a TensorFlow plugin. Use this library to implement DAU layers for any deep learning framework.
+This repository contains the implementation of the paper [**Rethinking Spatial Invariance of Convolutional Networks for Object Counting**](https://arxiv.org/pdf/2206.05253.pdf). It includes a self-contained GauNet implementation in C++ and CUDA, as well as a TensorFlow plugin. The library implements DAU layers for any deep learning framework.
 
-We propose a low-rank approximation accompanied with translation invariance to favorably implement the approximation of massive Gaussian convolution. We try to use locally connected Gaussian kernels to replace the original convolution filter to estimate the spatial position in the density map. The purpose of this is to allow the feature extraction process to potentially stimulate the density map generation process to overcome the annotation noise. Our work points a new direction for follow-up research, which should investigate how to properly relax the overly strict pixel-level spatial invariance for object counting.
+We propose a low-rank approximation with translation invariance to efficiently approximate massive Gaussian convolution. Our method uses locally connected Gaussian kernels to replace the original convolution filters, which helps estimate the spatial position in the density map. This allows the feature extraction process to potentially stimulate the density map generation process, thus overcoming annotation noise. Our work provides a new direction for future research to investigate how to properly relax the strict pixel-level spatial invariance for object counting.
 
 ![framework](./figures/framework.png)
 
 
 ## Available implementations
-We thank Vitjan Zavrtanik (VitjanZ) for TensorFlow C++/Python wrapper.
-The released training script borrows some codes from the [C^3 Framework](https://github.com/gjy3035/C-3-Framework) and [DAU-ConvNet](https://github.com/skokec/DAU-ConvNet) repositories. There are some inconsistencies in the function of the current TensorFlow version. Suggest waiting for our PyTorch implementation.
+We are grateful to Vitjan Zavrtanik (VitjanZ) for TensorFlow C++/Python wrapper.
+The training script borrows some codes from the [C^3 Framework](https://github.com/gjy3035/C-3-Framework) and [DAU-ConvNet](https://github.com/skokec/DAU-ConvNet) repositories. Currently, there are some inconsistencies in the TensorFlow version, so we recommend waiting for our PyTorch implementation.
 - [x] TensorFlow version
 - [-] PyTorch vsrsion 
 
@@ -28,7 +27,8 @@ See below for more details on each implementation.
 
 
 ## TensorFlow
-We provide TensorFlow plugin and appropriate Python wrappers that can be used to directly replace the `tf.contrib.layers.conv2d` function. Note our C++/CUDA code natively supports only NCHW format for input. Please update your TensorFlow models to use this format. 
+We provide a TensorFlow plugin and accompanying Python wrappers that can be used to directly replace the `tf.contrib.layers.conv2d` function. Our C++/CUDA code only supports NCHW format for input, so you'll need to update your TensorFlow models accordingly.
+
 
 Requirements and dependency libraries for TensorFlow plugin:
  * Python (tested on Python2.7 and Python3.5)
@@ -132,4 +132,4 @@ This work was partially supported by the Air Force Research Laboratory under agr
 The U.S. Government is authorized to reproduce and distribute reprints for Governmental purposes notwithstanding any copyright notation thereon. The views and conclusions contained herein are those of the authors and should not be interpreted as necessarily representing the official policies or endorsements, either expressed or implied, of the Air Force Research Laboratory or the U.S. Government.
 
 ## License
-GauNet is released under the Apache 2.0 license. Please see the [LICENSE](LICENSE) file for more information.
+GauNet is released under the Apache 2.0 license.
