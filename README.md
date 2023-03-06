@@ -19,7 +19,7 @@ We propose a low-rank approximation with translation invariance to efficiently a
 
 ## Available implementations
 We are grateful to Vitjan Zavrtanik (VitjanZ) for TensorFlow C++/Python wrapper.
-The training script borrows some codes from the [C^3 Framework](https://github.com/gjy3035/C-3-Framework) and [DAU-ConvNet](https://github.com/skokec/DAU-ConvNet) repositories. Currently, there are some inconsistencies in the TensorFlow version, so we recommend waiting for our PyTorch implementation.
+The training script borrows some codes from the [C^3 Framework](https://github.com/gjy3035/C-3-Framework) and [DAU-ConvNet](https://github.com/skokec/DAU-ConvNet) repositories. Currently, there are some inconsistencies in the TensorFlow version, so we recommend waiting for our PyTorch implementation. 
 - [x] TensorFlow version
 - [-] PyTorch vsrsion 
 
