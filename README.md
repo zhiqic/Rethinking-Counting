@@ -107,6 +107,7 @@ make install # will install whl package (with .so files) into python dist-packag
 
 ## Training
 Check the parameters in ```config.py``` before training.
+
 Please refer to [C^3 Framework](https://github.com/gjy3035/C-3-Framework) for more details.
 
 ## Testing
