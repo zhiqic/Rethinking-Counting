@@ -12,7 +12,7 @@
 In this project, we explore a unique approach to convolutional networks and object counting. This repository contains the full implementation of our paper, [Rethinking Spatial Invariance of Convolutional Networks for Object Counting](https://arxiv.org/pdf/2206.05253.pdf). Here, we introduce the GauNet implementation in C++ and CUDA, supplemented by a TensorFlow plugin. Dive into our innovative method of using locally connected Gaussian kernels to elevate the process of object counting in convolutional networks.
 
 <p align="center">
-  <img width="683" alt="image" src="https://github.com/zhiqic/Rethinking-Counting/assets/65300431/d077c925-42a7-4d6b-b0f7-247dc27fc530">
+  <img width="1170" alt="image" src="https://github.com/zhiqic/Rethinking-Counting/assets/65300431/2aea7e32-5d7e-4514-a321-8fbb2facb6ea">
 </p>
 
 ## Implementations
@@ -31,14 +31,24 @@ Easily replace the `tf.contrib.layers.conv2d` function using our TensorFlow plug
 - TensorFlow 1.6+
 - Numpy
 - OpenBlas
-- Optional: Scipy, Matplotlib, Python-tk for unit tests
+
+Optional:
+- Scipy
+- Matplotlib
+- Python-tk for unit tests
+
+```bash
+# Install the required dependencies
+sudo apt-get install python2.7 python3.5 python-pip python3-pip
+pip install tensorflow==1.6 numpy openblas
+```
 
 ### Installation
 
 For a quick setup, use the pre-compiled binaries for `TensorFlow`:
 
 ```bash
-# Install dependencies
+# Install further dependencies
 sudo apt-get install libopenblas-dev wget
 
 # Set up the package
@@ -50,7 +60,17 @@ For Docker users, access our pre-built images on [Docker Hub](https://hub.docker
 
 ### Training & Testing
 
-Configure your training parameters using `config.py`. For extensive details on training and testing, consult the [C^3 Framework](https://github.com/gjy3035/C-3-Framework).
+Training:
+
+1. Set the parameters in `config.py` and `./datasets/XXX/setting.py`. If you wish to reproduce our results, we recommend using our parameters in `./results_reports`.
+2. Run the command: `python train.py`.
+3. Monitor the training with TensorBoard using: `tensorboard --logdir=exp --port=6006`.
+
+Testing:
+
+- We only provide an example to test the model on the test set. You may need to modify it to test your own models.
+
+> **Note**: The training and testing instructions align with the ones used in the [C^3 Framework](https://github.com/gjy3035/C-3-Framework). You can follow similar commands as specified in that framework.
 
 ## Citing Our Work
 
@@ -71,4 +91,4 @@ If you use our work in your research, kindly cite our paper:
 
 GauNet is licensed under the [Apache 2.0 license](LICENSE.md).
 
-> **Note**: This repository is solely for academic purposes. Some information cannot be uploaded to GitHub due to restrictions. We appreciate your understanding.
+> **Disclaimer**: This repository's README has been modified due to certain constraints. We appreciate your understanding.
