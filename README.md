@@ -1,5 +1,4 @@
 # **Rethinking Spatial Invariance of Convolutional Networks for Object Counting**
-> **CVPR 2022** 
 
 ## Highlights
 
