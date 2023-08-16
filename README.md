@@ -72,6 +72,16 @@ Testing:
 
 > **Note**: The training and testing instructions align with the ones used in the [C^3 Framework](https://github.com/gjy3035/C-3-Framework). You can follow similar commands as specified in that framework.
 
+
+## Acknowledgments 
+
+Our heartfelt appreciation goes to:
+
+- **Vitjan Zavrtanik (VitjanZ)** for his pivotal support in developing the TensorFlow version of our project.
+  
+- The teams behind [C^3 Framework](https://github.com/gjy3035/C-3-Framework) and [DAU-ConvNet](https://github.com/skokec/DAU-ConvNet). Their work has significantly influenced our TensorFlow implementation.
+
+
 ## Citing Our Work
 
 If you use our work in your research, kindly cite our paper:
@@ -91,4 +101,4 @@ If you use our work in your research, kindly cite our paper:
 
 GauNet is licensed under the [Apache 2.0 license](LICENSE.md).
 
-> **Disclaimer**: This repository's README has been modified due to certain constraints. We appreciate your understanding.
+> **Disclaimer**: Due to the presence of sensitive information, modifications were made to this repository. We're actively addressing inconsistencies in our TensorFlow version. Unfortunately, a PyTorch version is not available at this time. Thank you for your understanding.
