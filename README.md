@@ -100,4 +100,4 @@ If you use our work in your research, kindly cite our paper:
 
 GauNet is licensed under the [Apache 2.0 license](LICENSE.md).
 
-> **Disclaimer**: Due to the presence of sensitive information, modifications were made to this repository. We're actively addressing inconsistencies in our TensorFlow version. Unfortunately, a PyTorch version is not available at this time. Thank you for your understanding.
+> **Disclaimer**: Due to the presence of sensitive information, modifications were made to this repository. Unfortunately, a PyTorch version is not available at this time. Thank you for your understanding.
