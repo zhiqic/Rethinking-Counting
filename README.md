@@ -6,15 +6,13 @@
 - 🎬 Watch the [YouTube Demonstration](https://www.youtube.com/watch?v=WiZ51V5M0C8&ab_channel=Zhi-QiCheng).
 - 📰 Read about it on the [Washington Post](https://www.washingtonpost.com/investigations/interactive/2021/dc-police-records-capitol-riot/).
 
-In this project, we explore a unique approach to convolutional networks and object counting. This repository contains the full implementation of our paper, [Rethinking Spatial Invariance of Convolutional Networks for Object Counting](https://arxiv.org/pdf/2206.05253.pdf). Here, we introduce the GauNet implementation in C++ and CUDA, supplemented by a TensorFlow plugin. Dive into our innovative method of using locally connected Gaussian kernels to elevate the process of object counting in convolutional networks.
+In this project, we explore a unique approach to convolutional networks and object counting. This repository contains the full implementation of our paper, [Rethinking Spatial Invariance of Convolutional Networks for Object Counting](https://arxiv.org/pdf/2206.05253.pdf). Here, we introduce the GauNet implementation in C++ and CUDA, supplemented by a TensorFlow plugin. Dive into our innovative method of using locally connected Gaussian kernels to elevate the process of object counting in convolutional networks. Developed with support from Vitjan Zavrtanik (VitjanZ). Developed with support from Vitjan Zavrtanik (VitjanZ). Many implementations of this version are from [C^3 Framework](https://github.com/gjy3035/C-3-Framework) and [DAU-ConvNet](https://github.com/skokec/DAU-ConvNet).
+
 
 <p align="center">
   <img width="1170" alt="image" src="https://github.com/zhiqic/Rethinking-Counting/assets/65300431/2aea7e32-5d7e-4514-a321-8fbb2facb6ea">
 </p>
 
-## Implementations
-
-Developed with support from Vitjan Zavrtanik (VitjanZ). This version contains references from [C^3 Framework](https://github.com/gjy3035/C-3-Framework) and [DAU-ConvNet](https://github.com/skokec/DAU-ConvNet). 
 
 ## Quick Start
 
