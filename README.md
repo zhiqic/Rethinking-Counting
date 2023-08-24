@@ -6,8 +6,6 @@
 - 🎬 Watch the [YouTube Demonstration](https://www.youtube.com/watch?v=WiZ51V5M0C8&ab_channel=Zhi-QiCheng).
 - 📰 Read about it on the [Washington Post](https://www.washingtonpost.com/investigations/interactive/2021/dc-police-records-capitol-riot/).
 
-## Introduction
-
 In this project, we explore a unique approach to convolutional networks and object counting. This repository contains the full implementation of our paper, [Rethinking Spatial Invariance of Convolutional Networks for Object Counting](https://arxiv.org/pdf/2206.05253.pdf). Here, we introduce the GauNet implementation in C++ and CUDA, supplemented by a TensorFlow plugin. Dive into our innovative method of using locally connected Gaussian kernels to elevate the process of object counting in convolutional networks.
 
 <p align="center">
@@ -16,8 +14,7 @@ In this project, we explore a unique approach to convolutional networks and obje
 
 ## Implementations
 
-- **TensorFlow Version** (Current): Developed with support from Vitjan Zavrtanik (VitjanZ). This version contains references from [C^3 Framework](https://github.com/gjy3035/C-3-Framework) and [DAU-ConvNet](https://github.com/skokec/DAU-ConvNet). Please note some inconsistencies are currently being addressed.
-- **PyTorch Version**: Unfortunately, due to various constraints, we are unable to provide a PyTorch version at this time.
+Developed with support from Vitjan Zavrtanik (VitjanZ). This version contains references from [C^3 Framework](https://github.com/gjy3035/C-3-Framework) and [DAU-ConvNet](https://github.com/skokec/DAU-ConvNet). 
 
 ## Quick Start
 
@@ -55,7 +52,7 @@ export TF_VERSION=1.13.1
 sudo pip install link_to_dau_conv_package
 ```
 
-For Docker users, access our pre-built images on [Docker Hub](https://hub.docker.com/r/skokec/dau-convnet). To manually build and install, please refer to the detailed steps in the original content.
+For Docker users, access our pre-built images on [Docker Hub](https://hub.docker.com/r/skokec/dau-convnet). To manually build and install, please refer to the detailed steps in the original [DAU-ConvNet](https://github.com/skokec/DAU-ConvNet).
 
 ### Training & Testing
 
@@ -100,4 +97,4 @@ If you use our work in your research, kindly cite our paper:
 
 GauNet is licensed under the [Apache 2.0 license](LICENSE.md).
 
-> **Disclaimer**: Due to the presence of sensitive information, modifications were made to this repository. Unfortunately, a PyTorch version is not available at this time. Thank you for your understanding.
+> **Disclaimer**: Due to the presence of sensitive information, modifications were made to this repository. Unfortunately, the PyTorch version is not available at this time. Thank you for your understanding.
