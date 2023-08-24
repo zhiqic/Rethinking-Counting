@@ -2,7 +2,7 @@
 
 ## Highlights
 
-- 🏆 **2022 Pulitzer Prize for Public Service**: Our method's application in analyzing the Capitol Riot earned a [Pulitzer Prize for public service](https://www.pulitzer.org/prize-winners-by-year). 
+- 🏆 **2022 Pulitzer Prize for Public Service**: Application in analyzing the Capitol Riot earned a [Pulitzer Prize for public service](https://www.pulitzer.org/prize-winners-by-year). 
 - 🎬 Watch the [YouTube Demonstration](https://www.youtube.com/watch?v=WiZ51V5M0C8&ab_channel=Zhi-QiCheng).
 - 📰 Read about it on the [Washington Post](https://www.washingtonpost.com/investigations/interactive/2021/dc-police-records-capitol-riot/).
 
